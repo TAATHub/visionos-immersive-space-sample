@@ -6,7 +6,7 @@ struct ImmersiveView: View {
     var body: some View {
         ZStack {
             RealityView { content in
-                guard let resource = try? TextureResource.load(named: "starfield") else {
+                guard let resource = try? TextureResource.load(named: "Starfield") else {
                     fatalError("Unable to load texture.")
                 }
                 
@@ -19,7 +19,7 @@ struct ImmersiveView: View {
                     materials: [material]
                 ))
                 
-                entity.scale *= .init(x: -1, y: 1, z: 1)
+                entity.scale *= SIMD3(repeating: -1)
                 content.add(entity)
             }
             
